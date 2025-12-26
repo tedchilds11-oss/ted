@@ -7,6 +7,22 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
+// Root endpoint
+app.get('/', (req, res) => {
+  res.json({
+    message: 'ClarityAI Backend API',
+    version: '1.0.0',
+    endpoints: {
+      health: '/health',
+      status: '/status',
+      demo: {
+        survival: '/demo/survival',
+        dashboard: '/demo/dashboard'
+      }
+    }
+  });
+});
+
 // Health check
 app.get('/health', (req, res) => {
   res.json({
