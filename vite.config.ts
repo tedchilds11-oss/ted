@@ -5,6 +5,7 @@ export default defineConfig({
   plugins: [react()],
   preview: {
     host: true,
-    port: 3000
+    port: 3000,
+    allowedHosts: ['ted-4n6r.onrender.com']
   }
 })
